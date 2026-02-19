@@ -1,0 +1,4 @@
+@import "tailwindcss";
+body {
+  @apply bg-indigo-500 min-h-screen;
+}
