@@ -14,3 +14,24 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+2️⃣ Online/Offline Indicator
+📌 What you learn
+
+Working with browser events
+Re-rendering UI based on system network state
+
+⚙️ Hooks used
+
+useState → online status
+useEffect → event listeners
+
+💡 Features
+
+Show green “Online” badge
+Show red “Offline” badge
+
+Super tiny project but very practical.
+
+3️⃣ Search List Filter
+📌 What you learn

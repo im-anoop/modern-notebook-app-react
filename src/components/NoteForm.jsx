@@ -9,7 +9,7 @@ const NoteForm = ({ setNotes }) => {
     });
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     };
 
     const resetForm = () => {
@@ -31,22 +31,19 @@ const NoteForm = ({ setNotes }) => {
 
         const newNote = {
             ...formData,
-            id: crypto.randomUUID(),
+            id: crypto.randomUUID?.() || String(Date.now()),
             createdAt: new Date().toISOString()
         };
 
-        setNotes(prev => [...prev, newNote]);
+        setNotes((prev) => [...prev, newNote]);
         resetForm();
     };
 
     return (
         <div className="max-w-xl mx-auto bg-slate-800/60 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-slate-700">
-            <h2 className="text-center text-3xl font-bold text-sky-400">
-                Add New Note
-            </h2>
+            <h2 className="text-center text-3xl font-bold text-sky-400">Add New Note</h2>
 
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-
                 <input
                     name="title"
                     value={formData.title}
@@ -87,11 +84,10 @@ const NoteForm = ({ setNotes }) => {
 
                 <button
                     type="submit"
-                    className="w-full bg-linear-to-r from-blue-500 to-indigo-600 p-3 rounded-lg text-white font-semibold shadow hover:opacity-90 transition"
+                    className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 p-3 rounded-lg text-white font-semibold shadow hover:opacity-90 transition"
                 >
                     Add Note
                 </button>
-
             </form>
         </div>
     );
